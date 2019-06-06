@@ -8,11 +8,12 @@
 
 import Foundation
 
+
 func gauges(myPlane : Aviatrix) {
     print("Reading the gauges...")
     print(" ")
 //    print("| Running:  | ✅")
-//    print("| Location:  | \(myPlane.location)")
+    print("| Location:  | \(myPlane.currentLocation)")
 //    print("| Distance:  | \(myPlane.distanceTraveled) miles")
 //    print("| Fuel:      | \(myPlane.fuelLevel) gallons")
 //    print("| Max Fuel:  | \(myPlane.maxFuel) gallons")
@@ -41,7 +42,7 @@ func fly(myPlane : Aviatrix) {
         
         if fuelCheck(myPlane: myPlane, destination : desiredLocation) {
             myPlane.flyTo(destination: desiredLocation)
-            print("🛬 You've arrived in _________!")
+            print("🛬 You've arrived in \(desiredLocation) !")
             gauges(myPlane: myPlane)
         }
     }
@@ -79,7 +80,7 @@ var plane = Aviatrix(author : "Makayla")
 print("Welcome to the Aviatrix Flight System by \(plane.authorName)")
 plane.start()
 
-print("You're currently in _________")
+print("You're currently in \(plane.currentLocation)")
 
 var command = ""
 
